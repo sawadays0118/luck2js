@@ -197,7 +197,7 @@ var uaSet = (function() {
 				currentPostfix: '_on',
 				gNavSelector: '#gNav',
 				gNavCurrentType: 'signature',//auto,signature
-				gNavList : ['top','about','works','service','contact'],//gNavCurrentType: 'signature' bodyId設定
+				gNavList: ['top','about','works','service','contact'],//gNavCurrentType: 'signature' bodyId設定
 				sNavSelector: '',
 				sNavNestElement: 'ul'//CSSでdisplay:none;設定を推奨
 			}, options);
@@ -321,7 +321,7 @@ var uaSet = (function() {
 				$(this).siblings(':nth-child(2n)').addClass(c.evenClass);
 				});
 				//:nth-childをクラスとして追加
-				$(c.oeParentClass).children().each(function() {
+				$(c.nthParentClass).children().each(function() {
 					n++;
 					for (var i=2;i<=n;i++) {
 						if ((n%i) == 0) {
