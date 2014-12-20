@@ -1,5 +1,5 @@
 /*
-* luck2.js 1.0 (yuga.js TT Custom customized jQuery plugin)
+* luck2.js 1.1 (yuga.js TT Custom customized jQuery plugin)
 *
 * Copyright (c) 2014 Tomoki Sawamura
 * tomoki.sawamura0118@gmail.com
