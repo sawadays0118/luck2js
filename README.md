@@ -1,6 +1,6 @@
-#luck2.js 1.0(yuga.js TT Custom customized plugin)
+#luck2.js 1.1(yuga.js TT Custom customized plugin)
 
-通称、らくらくjsです。(*´ω｀*)
+通称、らくらくjsです。(\*´ω｀\*)
 もっとhtmlに手を加えず簡単にWebサイトが作れないか。  
 というのをコンセプトに制作させていただきました。  
 
@@ -13,7 +13,11 @@
 <http://etc.dounokouno.com/yuga.js-TT-Custom/>
 
 
-##【change log】
+##Change Log
+####2014/12/21 ver 1.1
+初期設定がカスタマイズ加えた状態になっている箇所があったので、デフォルトに変更。
+Readmeに少しだけ加筆。
+
 ####2014/11/24 ver 1.0
 公開版リリース  
 **.placeholder**の追加  
@@ -53,7 +57,7 @@
 ####2013/05/11 ver 0.0 β版リリース
 
 
-##【License】
+##License
 **MIT License**  
 <http://www.opensource.org/licenses/mit-license.php>
 
@@ -61,7 +65,7 @@
 についてもすべて**[MIT License](http://www.opensource.org/licenses/mit-license.php)**となっています。
 
 
-##【Operation Check】
+##Operation Check
 ####jQuery
 * ver 1.8.2  
 * ver 1.9.1
@@ -88,7 +92,7 @@ OSはWindowsのみです。
 * ios7
 
 
-##【Description of Change】
+##Description of Change
 以下は**yuga.js TT Custom**からの主な変更点になります。
 
 
@@ -98,20 +102,20 @@ classなどの記述をキャメルケースに変更。
 
 
 ####機能別の変更点
-* rollover（そのまま）  
-* externalLink（変更）  
-* category（削除） → .autoCurrent（追加）  
-* scroll（変更）  
-* tab（変更）  
-* child（変更）  
-* icon（変更）  
-* heightLine（削除） → .fixHeight（追加）  
-* toggleBox（変更）  
-* placeholder（追加）  
-* popup（削除）
+* .rollover（そのまま）  
+* .externalLink（変更）  
+* .category（削除） → .autoCurrent（追加）  
+* .scroll（変更）  
+* .tab（変更）  
+* .child（変更）  
+* .icon（変更）  
+* .heightLine（削除） → .fixHeight（追加）  
+* .toggleBox（変更）  
+* .placeholder（追加）  
+* .popup（削除）
 
 
-##【Howto】
+##Howto
 **jquery.js**,**lack2.js**を以下の順に読み込んでください。  
 利用しない機能については、個別にコメントアウトまたは削除してください。  
 ```ruby
@@ -126,20 +130,20 @@ classなどの記述をキャメルケースに変更。
 
 **.icon**,**.child**については対象ブラウザがIE9以上の場合はCSSのみで完全対応が
 可能なため該当する場合は切ってしまっていいと思います。
-（**.icon**に関してはファイル名の後方一致と、テキストの後ろ側にアイコンを配置する
-必要性がなければ、CSSのみでIE7から対応可）
+（**.icon**に関しては、.icoNoneによる除外設定が不要で、ファイル名の後方一致と、
+テキストの後ろ側にアイコンを配置する必要性がなければ、CSSのみでIE7から対応可）
 
 **.placeholder**については対象ブラウザがIE10以上かつhtml5の場合は、
 通常の``placeholder``属性で対応が可能です。
 
-###【.externalLink】
+###.externalLink
 URLのスキームを省略して、リンクを//から始めた場合に対応しました。
 
-###【.scroll】
-name属性によるスクロールに対応しました。  
+###.scroll
+id属性以外に、name属性によるスクロールも対応しました。（主に旧CMSのwysiwygエディタで設定されるアンカーリンク対策）  
 また、スマートフォンでのスムーススクロールに対応しました。
 
-###【.autoCurrent】
+###.autoCurrent
 グローバルナビゲーションとサブナビゲーションに自動的なカレント表示（現在地表示）を行います。  
 （URL判定による完全自動カレント、またはCSSシグネチャによるページ制作時に、  
 bodyタグに指定するidを利用してカレントを行う方法の2種類から撰択出来ます。）
@@ -154,7 +158,7 @@ autoCurrent: function(options) {
 		currentPostfix: '_on',
 		gNavSelector: '#gNav',
 		gNavCurrentType: 'signature',//auto,signature
-		gNavList : ['top','about','works','service','contact'],//gNavCurrentType: 'signature' bodyId設定
+		gNavList: ['top','about','works','service','contact'],//gNavCurrentType: 'signature' bodyId設定
 		sNavSelector: '',
 		sNavNestElement: 'ul'//CSSでdisplay:none;設定を推奨
 	}, options);
@@ -269,12 +273,12 @@ CSSで``display:none;``を設定しておくことを推奨します。
 ``a``タグに自動でカレント表示の``class``が付加されます。
 
 
-###【.tab】
+###.tab
 リンクの末尾に?[tabのID名]を付けてクエリを設定した場合、
 ページ表示時に該当タブがクリックされた状態になるように変更
 
 
-###【.child】
+###.child
 yuga.jsのcss3classライクに``first-child``,``last-child``を子孫全てに指定、
 またはTT customと同様に範囲を指定した子要素などに導入することが可能です。
 デフォルトでは``first-child``,``last-child``はセレクタの子孫全てに、
@@ -314,7 +318,7 @@ $(this).find(':last-child').addClass(c.lastChildClass);
 ```
 
 ```ruby
-nthParentClass
+nthParentClass: '.nthParent',
 ```
 ``nth-child``の``class``を適用させたいセレクタを指定してください。
 
@@ -327,9 +331,9 @@ nthParentClass
 ``odd``,``even`` < ``nth-child()`` < ``nth-child(n)`` < ``first-child``,``last-child``
 の順番で表示されます。
 
+![luck2js .child firebug](http://imgur.com/bL6gccl.png)  
 
-
-###【.icon】
+###.icon
 URLのスキームを省略して、リンクを//から始めた場合に対応しました。
 word関連ファイルのアイコン表示に拡張子``.rtf``を追加しました。
 
@@ -412,7 +416,7 @@ a.icoExcel {
 }
 ```
 
-###【.fixHeight】
+###.fixHeight
 heightLine.jsの代替としてプラグインに同梱させていただきました。  
 このプラグインの特徴は親要素に特定のクラスを指定することで、  
 ボックスの高さを列ごとに自動で揃えてくれます。  
@@ -424,7 +428,7 @@ heightLine.jsの代替としてプラグインに同梱させていただきま�
 <http://www.starryworks.co.jp/blog/tips/fixheightjs.html>
 
 
-###【.toggleBox】
+###.toggleBox
 初期の表示非表示、アクティブ時のclass名、  
 トグルが動作する要素が指定可能です。  
 またトグルの各種機能は、ネストした状態でも動作します。
@@ -438,33 +442,33 @@ speed: 'normal'
 ```
 
 ```ruby
-selector
+selector: '.toggle dt',
 ```
 クリックでトグルさせたい要素を指定してください。
 
 ```ruby
-displayType
+displayType: 'show',//hide,show
 ```
 表示非表示を指定できます。
 
 ```ruby
-toggleClass
+toggleClass: 'active',
 ```
 アクティブ時のclass名を指定できます。
 
 ```ruby
-toggleType
+toggleType: 'slide',//fade,slide
 ```
 トグルが動作する際の挙動を指定できます。  
 ``slide``,``fade``から選ぶことができます。
 
 ```ruby
-speed
+speed: 'normal'
 ```
 動作スピードを指定できます。
 
 
-###【.placeholder】
+###.placeholder
 html5の``placeholder``属性を擬似的に再現できる機能です。
 
 ```ruby
@@ -478,7 +482,7 @@ hintClass: 'active'
 アクティブ時のclass名を指定できます。
 
 
-##【Special thanks】
+##Special thanks
 **W3G,LLC.**  
 <https://w3g.jp/>
 
@@ -493,7 +497,7 @@ hintClass: 'active'
 
 
 
-##【Remarks】
+##Remarks
 どういうわけか、制作に着手したときjQueryの知識はほとんどありませんでした。  
 ガチでjQueryプラグインを書いたのが、はじめてなので不具合等があるかもしれません。  
 バグ等を発見された方は、お手数ですがご連絡いただけますと幸いです。
