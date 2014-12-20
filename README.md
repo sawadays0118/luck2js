@@ -83,8 +83,6 @@ Readmeに少しだけ加筆。
 * Chrome 33  
 * Opera 11.6
 
-OSはWindowsのみです。
-
 **iPhone**
 * ios7
 
